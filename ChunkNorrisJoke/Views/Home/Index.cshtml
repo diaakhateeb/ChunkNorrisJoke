@@ -34,12 +34,11 @@
                             Category: $("#jokesList :selected").parent().attr("label")
                         };
                         console.log(data);
-                        if (data.JokeId !== 0 && data.JokeValue !== "" && data.Category !== "")
-                            $.post("/api/Joke/AddFavouriteJoke",
-                                { joke: [data] },
-                                "json",
-                                "application/json; charset=utf-8"
-                            );
+                        $.post("/api/Joke/AddFavouriteJoke",
+                            { joke: [data] },
+                            "json",
+                            "application/json; charset=utf-8"
+                        );
 
                     },
                     afterDeselect: function (value) {

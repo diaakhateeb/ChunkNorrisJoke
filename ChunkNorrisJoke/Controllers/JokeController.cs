@@ -38,10 +38,12 @@ namespace ChunkNorrisJoke.Controllers
         {
             dynamic jokeObject = joke;
             JArray jokeNode = jokeObject.joke;
+            var jokeValue = jokeNode[0].SelectToken("JokeValue").Value<string>();
+            if (string.IsNullOrEmpty(jokeValue)) return Ok();
             _dbContext.Jokes.Add(new Joke
             {
                 JokeId = jokeNode[0].SelectToken("JokeId").Value<int>(),
-                JokeValue = jokeNode[0].SelectToken("JokeValue").Value<string>(),
+                JokeValue = jokeValue,
                 Category = jokeNode[0].SelectToken("Category").Value<string>()
             });
             _dbContext.SaveChanges();
