@@ -38,12 +38,16 @@ As a simple application, it uses a **multiselect.js** library which can be found
 
 ## ِApplication Screenshots:
 
- Fetch Jokes ![- Fetch Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fetch%20jokes.png)
- 
+ 1. ## Fetch Jokes
+![- Fetch Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fetch%20jokes.png)
+
+2. ## Favorite Jokes 
 ![- Stored Favorite Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fav%20jokes.png)
 
+3. ## Get Random Jokes
 ![- Get Random Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/randome%20jokes.png)
 
+4. ## Done Getting Random Jokes
 ![- Done Random Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/done%20randome%20jokes.png)
  
 
