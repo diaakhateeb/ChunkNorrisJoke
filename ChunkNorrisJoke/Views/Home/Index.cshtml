@@ -69,12 +69,19 @@
         <tr>
             <td colspan="3">&nbsp;</td>
         </tr>
-        <tr>
+        <tr style="text-align: center; font-weight: bolder; text-decoration:underline">
+            <td>
+                New jokes
+            </td>
+            <td>Stored featured Jokes</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr style="text-align:center">
             <td>
                 <button class="btn btn-primary btn-success" onclick="jokeObject.fetchJokes($('#jokesList'), 'http://api.icndb.com/jokes/random/10')">Fetch Jokes (10 ones)</button>
             </td>
             <td>
-                <button id="btnTimer" class="btn btn-primary btn-block"
+                <button id="btnTimer" style="width:200px" class="btn btn-primary btn-block"
                         onclick="jokeObject.fireJokesTimer($('#jokesList'), 'http://api.icndb.com/jokes/random/10', 5000, $(this))">
                     Timer (OFF) - MAX(10)
                 </button>
