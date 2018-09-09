@@ -36,3 +36,14 @@ It is the data layer where favorite jokes are placed and stored. It can be repla
 ## Technical Design Highlights
 As a simple application, it uses a **multiselect.js** library which can be found [here](http://loudev.com/).
 
+## ِApplication Screenshots:
+
+ ![- Fetch Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fetch%20jokes.png)
+ 
+![- Stored Favorite Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fav%20jokes.png)
+
+![- Get Random Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/randome%20jokes.png)
+
+![- Done Random Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/done%20randome%20jokes.png)
+ 
+
