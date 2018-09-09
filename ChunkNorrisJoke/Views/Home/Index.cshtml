@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/multi-select.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.multi-select.js"></script>
+    <script src="~/Scripts/jokes/jokes.js"></script>
+
+    <script type="text/javascript">
+        let jokeObject = new JokeHandler();
+
+        $(document).ready(() => {
+            $("#jokesList").empty();
+            jokeObject.fetchSavedJokes($("#jokesList"), "/api/Joke/GetStoredFavouriteJokes").then(() => {
+                $('#jokesList').multiSelect({
+                    afterSelect: function (value) {
+                        const data = {
+                            JokeId: Number(value),
+                            JokeValue: $("#jokesList option[value='" + value + "']").text(),
+                            Category: $("#jokesList :selected").parent().attr("label")
+                        };
+                        console.log(data);
+                        if (data.JokeId !== 0 && data.JokeValue !== "" && data.Category !== "")
+                            $.post("/api/Joke/AddFavouriteJoke",
+                                { joke: [data] },
+                                "json",
+                                "application/json; charset=utf-8"
+                            );
+
+                    },
+                    afterDeselect: function (value) {
+                        console.log("Deselect value: " + value);
+                        $.get("/api/Joke/DeleteFavouriteJoke", { id: value });
+                    }
+                });
+            }).then(() => {
+                $("#jokesList").multiSelect("select_all");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table style="margin: 0 auto">
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td style="font-weight: bolder; font-size: 40px; text-decoration:underline">Chunk Norris Joke Assignment</td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+    </table>
+    <div>&nbsp;</div>
+    <table style="margin: 0 auto">
+        <tr>
+            <td colspan="3" id="jokesTD">
+                <select id="jokesList" class="form-control"></select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td><button class="btn btn-primary btn-dark" onclick="jokeObject.fetchJokes($('#jokesList'), 'http://api.icndb.com/jokes/random/10')">Fetch Jokes</button></td>
+            @*<td>
+                    <button id="btnUpdateFavJokes" class="btn btn-primary btn-success" onclick="updateFavouriteJokes()" disabled="disabled">
+                        Save Favourite Jokes
+                    </button>
+                </td>*@
+            <td>
+                <button id="btnTimer" class="btn btn-primary btn-block"
+                        onclick="jokeObject.fireJokesTimer($('#jokesList'), 'http://api.icndb.com/jokes/random/10', 5000, $(this))">
+                    Timer (Off)
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
