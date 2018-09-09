@@ -41,7 +41,7 @@ As a simple application, it uses a **multiselect.js** library which can be found
  1. ## Fetch Jokes
 ![- Fetch Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fetch%20jokes.png)
 
-2. ## Favorite Jokes 
+2. ## Load Stored Favorite Jokes at Startup
 ![- Stored Favorite Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fav%20jokes.png)
 
 3. ## Get Random Jokes
