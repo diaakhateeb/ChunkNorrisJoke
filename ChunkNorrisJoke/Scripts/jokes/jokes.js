@@ -65,10 +65,9 @@ class JokeHandler {
                 const jsonRx = $.getJSON(jokesRestUrl,
                     (data) => {
                         if (data.type === "success" && counter < 10) {
-                            const randomJoke = data.value[Math.floor(Math.random() * data.value.length)];
-                            console.log(randomJoke);
-                            const group = $('<optgroup label="' + randomJoke.categories + '">');
-                            $("<option value='" + randomJoke.id + "' />").html(randomJoke.joke).appendTo(group);
+                            console.log(data.value[0]);
+                            const group = $('<optgroup label="' + data.value[0].categories + '">');
+                            $("<option value='" + data.value[0].id + "' />").html(data.value[0].joke).appendTo(group);
                             group.appendTo($elementId);
                             console.log($(button).text());
                             counter++;
