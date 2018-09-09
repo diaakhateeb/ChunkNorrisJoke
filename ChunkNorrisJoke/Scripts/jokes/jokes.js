@@ -1,5 +1,15 @@
 ﻿var intVal = null;
 var buttonObject = null;
+var counter = 0;
+
+function stopTimer() {
+    clearInterval(intVal);
+    intVal = null;
+    $(buttonObject).text("Timer (Off)");
+    $(buttonObject).css("background-color", "");
+    counter = 0;
+    console.log(counter);
+}
 
 class JokeHandler {
     fetchSavedJokes($elementId, restUrl) {
@@ -46,7 +56,7 @@ class JokeHandler {
     }
 
     fireJokesTimer($elementId, jokesRestUrl, interval, button) {
-        if (!intVal) {
+        if (!intVal && counter <= 10) {
             $elementId.empty();
             buttonObject = button;
             $(button).text("Timer (On)");
@@ -54,14 +64,16 @@ class JokeHandler {
             intVal = setInterval(() => {
                 const jsonRx = $.getJSON(jokesRestUrl,
                     (data) => {
-                        if (data.type === "success") {
+                        if (data.type === "success" && counter < 10) {
                             const randomJoke = data.value[Math.floor(Math.random() * data.value.length)];
                             console.log(randomJoke);
                             const group = $('<optgroup label="' + randomJoke.categories + '">');
                             $("<option value='" + randomJoke.id + "' />").html(randomJoke.joke).appendTo(group);
                             group.appendTo($elementId);
                             console.log($(button).text());
-                        }
+                            counter++;
+                            console.log(counter);
+                        } else stopTimer();
                     });
                 return jsonRx.then(() => {
                     $elementId.multiSelect("deselect_all");
@@ -71,10 +83,13 @@ class JokeHandler {
             },
                 interval);
         } else {
-            clearInterval(intVal);
-            intVal = null;
-            $(button).text("Timer (Off)");
-            $(button).css("background-color", "");
+            //clearInterval(intVal);
+            //intVal = null;
+            //$(button).text("Timer (Off)");
+            //$(button).css("background-color", "");
+            //counter = 0;
+            //console.log(counter);
+            stopTimer();
         }
     }
 }

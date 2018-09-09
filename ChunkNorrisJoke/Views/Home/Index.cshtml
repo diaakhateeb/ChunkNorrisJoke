@@ -39,12 +39,15 @@
                             "json",
                             "application/json; charset=utf-8"
                         );
-
                     },
                     afterDeselect: function (value) {
                         console.log("Deselect value: " + value);
                         $.get("/api/Joke/DeleteFavouriteJoke", { id: value });
                     }
+                    //afterInit: function (container) {
+                    //    if (counter > 10) $("#jokesList").attr("disabled", "disabled");
+                    //    else $("#jokesList").removeAttr("disabled");
+                    //}
                 });
             }).then(() => {
                 $("#jokesList").multiSelect("select_all");
