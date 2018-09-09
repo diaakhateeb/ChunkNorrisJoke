@@ -30,7 +30,7 @@ It is the layer that responsible for parsing the jokes from the FE layer to the 
 
 **3. Backend (BE):**
 
-It is the data layer where favorite jokes are placed and stored. It can be replaced by any other data containers such as memory storage, web storage or even flat files. We have here one table called [Joke](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Models/Joke.cs) which stores Joke Id, value and category.
+It is the data layer where favorite jokes are placed and stored. It can be replaced by any other data containers such as memory storage, web storage or even flat files. We have here one table called [Joke](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Models/Joke.cs) which stores Joke Id, value and category. Database structure and table creation script can be found [here](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/App_Data/ChunkNorriesJokes_db.txt) as well.
 
 
 ## Technical Design Highlights
