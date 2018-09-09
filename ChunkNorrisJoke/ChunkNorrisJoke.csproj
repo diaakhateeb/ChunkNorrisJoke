@@ -161,6 +161,10 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Screenshots\done randome jokes.png" />
+    <Content Include="Images\Screenshots\fav jokes.png" />
+    <Content Include="Images\Screenshots\fetch jokes.png" />
+    <Content Include="Images\Screenshots\randome jokes.png" />
     <Content Include="Images\switch.png" />
     <Content Include="Models\ChunkNorrisJokesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -194,6 +198,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jokes\jokes.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
