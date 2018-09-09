@@ -1,6 +1,5 @@
 
-# Chunk Norris Joke (http://alten.centralus.cloudapp.azure.com)
-
+# [Chunk Norris Joke](http://alten.centralus.cloudapp.azure.com)
 The application objective is to fetch 10 Random Chuck Norris jokes. These jokes can be fetched
 from the following API http://api.icndb.com/jokes/random/10
 
