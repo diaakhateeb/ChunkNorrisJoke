@@ -38,7 +38,7 @@ As a simple application, it uses a **multiselect.js** library which can be found
 
 ## ِApplication Screenshots:
 
- ![- Fetch Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fetch%20jokes.png)
+ Fetch Jokes ![- Fetch Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fetch%20jokes.png)
  
 ![- Stored Favorite Jokes.](https://github.com/diaakhateeb/ChunkNorrisJoke/blob/master/ChunkNorrisJoke/Images/Screenshots/fav%20jokes.png)
 
