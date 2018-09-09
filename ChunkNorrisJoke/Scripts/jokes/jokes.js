@@ -5,7 +5,7 @@ var counter = 0;
 function stopTimer() {
     clearInterval(intVal);
     intVal = null;
-    $(buttonObject).text("Timer (Off)");
+    $(buttonObject).text("Timer (OFF) - MAX(10)");
     $(buttonObject).css("background-color", "");
     counter = 0;
     console.log(counter);
@@ -59,7 +59,7 @@ class JokeHandler {
         if (!intVal && counter <= 10) {
             $elementId.empty();
             buttonObject = button;
-            $(button).text("Timer (On)");
+            $(button).text("Timer (ON) - MAX(10)");
             $(button).css("background-color", "red");
             intVal = setInterval(() => {
                 const jsonRx = $.getJSON(jokesRestUrl,
@@ -83,12 +83,6 @@ class JokeHandler {
             },
                 interval);
         } else {
-            //clearInterval(intVal);
-            //intVal = null;
-            //$(button).text("Timer (Off)");
-            //$(button).css("background-color", "");
-            //counter = 0;
-            //console.log(counter);
             stopTimer();
         }
     }

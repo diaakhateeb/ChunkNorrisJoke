@@ -44,10 +44,6 @@
                         console.log("Deselect value: " + value);
                         $.get("/api/Joke/DeleteFavouriteJoke", { id: value });
                     }
-                    //afterInit: function (container) {
-                    //    if (counter > 10) $("#jokesList").attr("disabled", "disabled");
-                    //    else $("#jokesList").removeAttr("disabled");
-                    //}
                 });
             }).then(() => {
                 $("#jokesList").multiSelect("select_all");
@@ -74,16 +70,13 @@
             <td colspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td><button class="btn btn-primary btn-dark" onclick="jokeObject.fetchJokes($('#jokesList'), 'http://api.icndb.com/jokes/random/10')">Fetch Jokes</button></td>
-            @*<td>
-                    <button id="btnUpdateFavJokes" class="btn btn-primary btn-success" onclick="updateFavouriteJokes()" disabled="disabled">
-                        Save Favourite Jokes
-                    </button>
-                </td>*@
+            <td>
+                <button class="btn btn-primary btn-success" onclick="jokeObject.fetchJokes($('#jokesList'), 'http://api.icndb.com/jokes/random/10')">Fetch Jokes (10 ones)</button>
+            </td>
             <td>
                 <button id="btnTimer" class="btn btn-primary btn-block"
                         onclick="jokeObject.fireJokesTimer($('#jokesList'), 'http://api.icndb.com/jokes/random/10', 5000, $(this))">
-                    Timer (Off)
+                    Timer (OFF) - MAX(10)
                 </button>
             </td>
         </tr>
