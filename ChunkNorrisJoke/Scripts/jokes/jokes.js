@@ -1,6 +1,6 @@
 ﻿var intVal = null;
 var buttonObject = null;
-var counter = 0;
+var counter = 1;
 
 function stopTimer() {
     clearInterval(intVal);
@@ -30,14 +30,13 @@ class JokeHandler {
     }
 
     fetchJokes($elementId, jokesRestUrl) {
-        clearInterval(intVal);
-        intVal = null;
-        $(buttonObject).text("Timer (Off)");
-        $(buttonObject).css("background-color", "");
-
         const jsonRx = $.getJSON(jokesRestUrl,
             (data) => {
                 if (data.type === "success") {
+                    clearInterval(intVal);
+                    intVal = null;
+                    $(buttonObject).text("Timer (OFF) - MAX(10)");
+                    $(buttonObject).css("background-color", "");
                     $elementId.empty();
                     $.each(data.value,
                         (k, v) => {
@@ -56,7 +55,7 @@ class JokeHandler {
     }
 
     fireJokesTimer($elementId, jokesRestUrl, interval, button) {
-        if (!intVal && counter <= 10) {
+        if (!intVal) {
             $elementId.empty();
             buttonObject = button;
             $(button).text("Timer (ON) - MAX(10)");
@@ -64,7 +63,7 @@ class JokeHandler {
             intVal = setInterval(() => {
                 const jsonRx = $.getJSON(jokesRestUrl,
                     (data) => {
-                        if (data.type === "success" && counter < 10) {
+                        if (data.type === "success" && counter <= 10) {
                             console.log(data.value[0]);
                             const group = $('<optgroup label="' + data.value[0].categories + '">');
                             $("<option value='" + data.value[0].id + "' />").html(data.value[0].joke).appendTo(group);
