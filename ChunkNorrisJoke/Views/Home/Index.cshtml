@@ -78,7 +78,10 @@
         <tr><td>&nbsp;</td></tr>
         <tr style="text-align:center">
             <td>
-                <button class="btn btn-primary btn-success" onclick="jokeObject.fetchJokes($('#jokesList'), 'http://api.icndb.com/jokes/random/10')">Fetch Jokes (10 ones)</button>
+                <button class="btn btn-primary btn-dark" onclick="jokeObject.fetchJokes($('#jokesList'), 'http://api.icndb.com/jokes/random/10')">Fetch Jokes (10 ones)</button>
+            </td>
+            <td>
+                <button class="btn btn-primary btn-success" onclick="location.href = location.href">Refresh</button>
             </td>
             <td>
                 <button id="btnTimer" style="width:200px" class="btn btn-primary btn-block"
